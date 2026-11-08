@@ -11,6 +11,7 @@ exports[`Provider.formatResults > Pexels > transforms API response correctly 1`]
     "color": "#f39c12",
     "height": 2160,
     "id": "12345",
+    "pageUrl": "https://www.pexels.com/photo/colorful-sunset-12345/",
     "urls": {
       "download": "https://www.pexels.com/photo/colorful-sunset-12345/",
       "original": "https://images.pexels.com/photos/12345/pexels-photo-12345.jpeg",
@@ -27,6 +28,7 @@ exports[`Provider.formatResults > Pexels > transforms API response correctly 1`]
     "color": "#27ae60",
     "height": 1440,
     "id": "67890",
+    "pageUrl": "https://www.pexels.com/photo/green-forest-67890/",
     "urls": {
       "download": "https://www.pexels.com/photo/green-forest-67890/",
       "original": "https://images.pexels.com/photos/67890/pexels-photo-67890.jpeg",
@@ -92,6 +94,11 @@ exports[`Provider.formatResults > Unsplash > transforms API response correctly 1
     "color": "#2c3e50",
     "height": 3000,
     "id": "abc123",
+    "pageUrl": "https://unsplash.com/photos/abc123?utm_source=payload-bites-image-search&utm_medium=referral",
+    "tags": [
+      "mountain",
+      "landscape",
+    ],
     "urls": {
       "download": "https://unsplash.com/photos/abc123/download?utm_source=payload-bites-image-search&utm_medium=referral",
       "downloadLocation": "https://api.unsplash.com/photos/abc123/download?ixid=123&utm_source=payload-bites-image-search&utm_medium=referral",
@@ -109,6 +116,7 @@ exports[`Provider.formatResults > Unsplash > transforms API response correctly 1
     "color": "#e74c3c",
     "height": 1080,
     "id": "def456",
+    "tags": [],
     "urls": {
       "download": "https://unsplash.com/photos/def456/download?utm_source=payload-bites-image-search&utm_medium=referral",
       "downloadLocation": "https://api.unsplash.com/photos/def456/download?ixid=456&utm_source=payload-bites-image-search&utm_medium=referral",

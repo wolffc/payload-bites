@@ -11,7 +11,9 @@ export const unsplashFixture: UnsplashResult[] = [
 			thumb: "https://images.unsplash.com/photo-abc123?w=200",
 			full: "https://images.unsplash.com/photo-abc123?w=4000",
 		},
+		tags: [{ title: "mountain" }, { title: "landscape" }],
 		links: {
+			html: "https://unsplash.com/photos/abc123",
 			download: "https://unsplash.com/photos/abc123/download",
 			download_location:
 				"https://api.unsplash.com/photos/abc123/download?ixid=123",

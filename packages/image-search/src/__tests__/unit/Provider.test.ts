@@ -16,6 +16,20 @@ describe("Provider.formatResults", () => {
 			expect(result).toMatchSnapshot();
 		});
 
+		it("keeps tags and the page URL, with the referral params", () => {
+			const provider = new Unsplash();
+
+			const result = provider.formatResults(unsplashFixture);
+
+			expect(result[0]?.tags).toEqual(["mountain", "landscape"]);
+			expect(result[0]?.pageUrl).toBe(
+				"https://unsplash.com/photos/abc123?utm_source=payload-bites-image-search&utm_medium=referral",
+			);
+			// Second image has no tags and no page link
+			expect(result[1]?.tags).toEqual([]);
+			expect(result[1]?.pageUrl).toBeUndefined();
+		});
+
 		it("handles missing alt_description", () => {
 			const provider = new Unsplash();
 
@@ -33,6 +47,17 @@ describe("Provider.formatResults", () => {
 			const result = provider.formatResults(pexelsFixture);
 
 			expect(result).toMatchSnapshot();
+		});
+
+		it("keeps the page URL and has no tags", () => {
+			const provider = new Pexels();
+
+			const result = provider.formatResults(pexelsFixture);
+
+			expect(result[0]?.pageUrl).toBe(
+				"https://www.pexels.com/photo/colorful-sunset-12345/",
+			);
+			expect(result[0]?.tags).toBeUndefined();
 		});
 
 		it("handles empty alt text", () => {

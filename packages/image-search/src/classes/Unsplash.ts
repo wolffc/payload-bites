@@ -13,7 +13,9 @@ export interface UnsplashResult {
 		thumb: string;
 		full: string;
 	};
+	tags?: { title: string }[];
 	links: {
+		html?: string;
 		download: string;
 		download_location: string;
 	};
@@ -89,6 +91,11 @@ export class Unsplash extends Provider {
 				name: image.user?.name,
 				link: `${image.user?.links?.html}?${REFERRAL_PARAMS}`,
 			},
+			// Only search results carry tags; the featured (random) endpoint does not.
+			tags: (image.tags ?? []).map((tag) => tag.title).filter(Boolean),
+			...(image.links?.html && {
+				pageUrl: `${image.links.html}?${REFERRAL_PARAMS}`,
+			}),
 		}));
 	}
 }

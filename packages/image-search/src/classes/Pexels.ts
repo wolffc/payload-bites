@@ -1,4 +1,4 @@
-import { Provider } from "./Provider.js";
+import { Provider, type ProviderResult } from "./Provider.js";
 
 export interface PexelsResult {
 	id: string;
@@ -54,7 +54,7 @@ export class Pexels extends Provider {
 		};
 	}
 
-	formatResults(data: PexelsResult[]) {
+	formatResults(data: PexelsResult[]): ProviderResult[] {
 		return data.map((image) => ({
 			id: image.id,
 			alt: image.alt || "",
@@ -70,6 +70,8 @@ export class Pexels extends Provider {
 				name: image.photographer,
 				link: image.photographer_url,
 			},
+			// Pexels has no keywords; `alt` is its description of the photo.
+			pageUrl: image.url,
 		}));
 	}
 }
